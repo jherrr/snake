@@ -1,5 +1,7 @@
+var View = require("./snake-view.js");
 
   console.log("js loading!");
+  var view = new View();
 
   var Snake = function(direction, segments) {
     this.direction = direction;

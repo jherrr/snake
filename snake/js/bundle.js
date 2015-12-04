@@ -42,10 +42,12 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
+	var View = __webpack_require__(1);
 	
 	  console.log("js loading!");
+	  var view = new View();
 	
 	  var Snake = function(direction, segments) {
 	    this.direction = direction;
@@ -116,6 +118,23 @@
 	  };
 	
 	module.exports = Board;
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var Board = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./main.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var View = function() {
+	  this.board = new Board();
+	  $("snake").on("keydown", function(e) {
+	    e.handleKeyEvent(e);
+	    // debugger
+	  });
+	};
+	
+	module.exports = View;
 
 
 /***/ }

@@ -1,6 +1,11 @@
-var Board = require("./snake.js");
+var Board = require("./main.js");
 
 var View = function() {
   this.board = new Board();
-  $l("snake");
+  $("snake").on("keydown", function(e) {
+    e.handleKeyEvent(e);
+    // debugger
+  });
 };
+
+module.exports = View;
